@@ -1,0 +1,177 @@
+/*Temperature Converter Folder - CSS
+This project converts a given temperature to the desired temperature.*/
+
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+/*This imports the "Major Mono Display" font from "Google Fonts".*/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+/*Sets the margin & padding to top-left edge.
+ "Box-sizing: border-box" keeps the same size "container" 
+  regardless of added borders, padding, etc.*/
+
+body {
+   	background: black;
+   	z-index: 0;
+ }
+
+div {
+	height: 33.33vh;
+}
+/*Normally in order for the child "div" height to work,
+  the parent "body" must have a height.  However with 
+  "vh" (viewport height), it will automatically split
+  the screen as seen into the percentage given on its own.*/
+
+#fahrenheit {
+	border-top: 4px solid white;
+	border-bottom: 4px solid white;
+}
+
+ input[type=number] {
+ 	width: 100%;
+  	height: 100%;
+  	outline: none;
+  	background: black;
+  	color: white;
+  	font-size: 6em;
+  	text-align: right;
+  	padding-right: 110px;
+  	border: 0;
+  	font-family: 'Major Mono Display', monospace;
+	position: relative;
+	z-index: 2;
+ }
+  /*Width is 100% across while the height is 100% of each 
+    1/3 "block".  Also using imported font above with
+    "monospace" as a backup font.  "Outline: none" eliminates 
+    borders' edging.*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*The above code is used to remove the annoying "spinners" 
+  (little arrows for up & down in input number fields that 
+  are part of today's browsers like Chrome)*/
+
+ #celsius_unit, #fahrenheit_unit, #kelvin_unit {
+	color: white;
+	font-family: 'arial';
+	font-size: 5em;
+	position: absolute;
+	z-index: 3;
+}
+
+#celsius_unit {
+	top: 80px;
+	right: 20px;
+}
+
+#fahrenheit_unit {
+	top: 330px;
+	right: 20px;
+}
+
+#kelvin_unit {
+	top: 580px;
+	right: 20px;
+}
+
+::placeholder {
+	color: #222222;
+}
+/*The double-colons ("::") are called a "pseudo-element" and 
+  are used for placeholders to style the content inside input 
+  boxes.  This only works for Google Chrome Browsers.  See below 
+  for the others.*/
+
+::-webkit-input-placeholder {
+	color: #222222;
+}
+/*This works for Chrome, Opera, & Safari Browsers.*/
+
+::-moz-placeholder {
+	color: #222222;
+}
+/*This works for Firefox Browsers.*/
+
+
+::-ms-input-placeholder {
+	color: #222222;
+}
+/*This works for Microsoft Edge Browsers.*/
+
+#celsius > #cold_thermometerC {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	z-index: 3;
+}
+
+#celsius > #warm_thermometerC {
+	visibility: visible;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	z-index: 3;
+}
+#celsius > #hot_thermometerC {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	z-index: 3;
+}
+
+#fahrenheit > #cold_thermometerF {
+	visibility: hidden;
+	position: absolute;
+	top: 300px;
+	left: 0;
+	z-index: 3;
+}
+
+#fahrenheit > #warm_thermometerF {
+	visibility: visible;
+	position: absolute;
+	top: 280px;
+	left: 0;
+	z-index: 3;
+}
+#fahrenheit > #hot_thermometerF {
+	visibility: hidden;
+	position: absolute;
+	top: 300px;
+	left: 0;
+	z-index: 3;
+}
+
+#kelvin > #cold_thermometerK {
+	visibility: hidden;
+	position: absolute;
+	top: 550px;
+	left: 0;
+	z-index: 3;
+}
+
+#kelvin > #warm_thermometerK {
+	visibility: visible;
+	position: absolute;
+	top: 520px;
+	left: 0;
+	z-index: 3;
+}
+
+#kelvin > #hot_thermometerK {
+	visibility: hidden;
+	position: absolute;
+	top: 550px;
+	left: 0;
+	z-index: 3;
+}
